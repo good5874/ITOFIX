@@ -250,7 +250,7 @@ namespace Diplom.Controllers
                 worksheet.Cell(currentRow, 6).Value = "Статус";
                 #endregion
                 #region Body
-                foreach (var zadachii in _context.Zadachis)
+                foreach (var zadachii in _context.Zadachis.Where(e=>e.Status =="Выполнен").ToList)
                 {
                     currentRow++;
                     worksheet.Cell(currentRow, 1).Value = zadachii.Task_Name;
